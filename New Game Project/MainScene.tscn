@@ -167,6 +167,11 @@ position = Vector2( 288, 544 )
 speed = 400
 moveDist = 448
 
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 866.316, 540.845 )
+speed = 400
+moveDist = 448
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource( 6 )]
