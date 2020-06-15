@@ -1,6 +1,6 @@
 # GodotGameProject
 
-Game project using GODOT made by:
-Jonathan
-Saul
-Cesar
+Game project using GODOT made by: \n
+Jonathan\n
+Saul\n
+Cesar\n
