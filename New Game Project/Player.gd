@@ -6,12 +6,13 @@ var speed : int = 200
 var jumpForce : int = 1000
 var gravity : int = 2000
 
-
+var verdad : bool
 var vel : Vector2 = Vector2()
 
 onready var anim : Sprite = get_node("ASprite")
 onready var ui : Node = get_node("/root/MainScene/CanvasLayer/UI")
 onready var audioPlayer : Node = get_node("/root/MainScene/Camera2D/AudioPlayer")
+onready var floorvibe : Node = get_node("/root/Tile/CollisionShape2D")
 
 func _process(delta):
 	vel.x = 0
@@ -23,10 +24,8 @@ func _process(delta):
 		vel.x -= speed
 		if Input.is_action_pressed("run"):
 			vel.x -= speed /2
-		if (anim.animation != "Walking"):
+		if is_on_floor() == true:
 			anim.play("Walking")
-	elif Input.is_action_just_released("move_left"):
-		anim.animation = "Standing"
 	
 	#move right
 	if Input.is_action_pressed("move_right"):
@@ -35,13 +34,14 @@ func _process(delta):
 			vel.x += speed /2
 		if is_on_floor() == true:
 			anim.play("Walking")
-	elif Input.is_action_just_released("move_right"):
-		anim.animation = "Standing"
 	
-		#jump input
+	#jump input
 	if Input.is_action_pressed("jump") and is_on_floor():
 		anim.play("Jumping")
 		vel.y -= jumpForce 
+	
+	check_button()
+	
 	
 	
 	
@@ -72,3 +72,6 @@ func collect_coin(value):
 	audioPlayer.play_coin_sfx()
 	
 
+func check_button():
+	if Input.is_action_pressed("move_left") == false and Input.is_action_pressed("move_right") == false and Input.is_action_pressed("jump") == false and is_on_floor():
+		anim.play("Standing")
