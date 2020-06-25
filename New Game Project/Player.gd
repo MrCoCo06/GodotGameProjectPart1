@@ -10,9 +10,8 @@ var verdad : bool
 var vel : Vector2 = Vector2()
 
 onready var anim : Sprite = get_node("ASprite")
-onready var ui : Node = get_node("/root/MainScene/CanvasLayer/UI")
-onready var audioPlayer : Node = get_node("/root/MainScene/Camera2D/AudioPlayer")
-onready var floorvibe : Node = get_node("/root/Tile/CollisionShape2D")
+onready var ui : Node = get_node("/root/Mission #1/CanvasLayer/UI")
+onready var audioPlayer : Node = get_node("/root/Mission #1/Camera2D/AudioPlayer")
 
 func _process(delta):
 	vel.x = 0
@@ -38,6 +37,7 @@ func _process(delta):
 	#jump input
 	if Input.is_action_pressed("jump") and is_on_floor():
 		anim.play("Jumping")
+		
 		vel.y -= jumpForce 
 	
 	check_button()

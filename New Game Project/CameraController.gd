@@ -1,6 +1,6 @@
 extends Camera2D
 
-onready var player = get_node("/root/MainScene/Player")
+onready var player = get_node("/root/Mission #1/Player")
 
 func _process(delta):
 	
