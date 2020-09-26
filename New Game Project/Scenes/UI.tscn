@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Font/ubuntu-regular.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprites/heart.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Coin.png" type="Texture" id=3]
+[ext_resource path="res://GD files/UI.gd" type="Script" id=4]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.22772
+margin_right = -1.22772
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CoinTexture" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreText" type="Label" parent="CoinTexture"]
+margin_left = 64.0
+margin_right = 128.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthTexture" type="TextureRect" parent="."]
+margin_left = -6.10352e-05
+margin_top = 67.5255
+margin_right = 63.9999
+margin_bottom = 131.526
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthText" type="Label" parent="HealthTexture"]
+margin_left = 64.0
+margin_right = 128.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
