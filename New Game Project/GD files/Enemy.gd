@@ -1,11 +1,12 @@
 extends Area2D
 
 export var speed : int = 100
-export var moveDist : int = 100
+export var moveDist : int = 300
+export var enemy_score : int = 2
 
-onready var t : Node = get_node("Timer")
 onready var startX : int = position.x
 onready var targetX : int = position.x + moveDist
+
 
 func _process(delta):
 	
@@ -35,12 +36,11 @@ func move_to (current, to, step):
 			new = to
 	return new
 
-
+#When called, gives player 2 points for eliminating monster
 func _on_Enemy_body_entered(body):
 	
 	if body.name == "Player":
-		t.set_one_shot(.2)
-		t.start()
-		if(t.is_one_shot() == true):
-			body.takedamage(50)
+		body.collect_coin(enemy_score)
+		queue_free()
+	
 
