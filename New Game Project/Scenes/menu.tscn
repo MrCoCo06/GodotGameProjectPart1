@@ -6,25 +6,26 @@
 
 [node name="Control" type="Control"]
 anchor_top = 0.013
-anchor_right = 1.0
-anchor_bottom = 0.96
+anchor_right = 0.124375
+anchor_bottom = 0.214133
 margin_top = -7.8
+margin_right = 896.64
+margin_bottom = 479.52
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = 24.0
+anchor_bottom = 0.987
+margin_bottom = -0.0960083
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="start" type="TextureButton" parent="Panel"]
-margin_left = 480.0
 margin_top = 128.0
-margin_right = 544.0
+margin_right = 64.0
 margin_bottom = 192.0
 hint_tooltip = "start game"
 action_mode = 0
@@ -37,9 +38,8 @@ __meta__ = {
 }
 
 [node name="close" type="TextureButton" parent="Panel"]
-margin_left = 480.0
 margin_top = 256.0
-margin_right = 544.0
+margin_right = 64.0
 margin_bottom = 320.0
 hint_tooltip = "close game"
 texture_normal = ExtResource( 2 )
@@ -47,20 +47,5 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Label" type="Label" parent="Panel"]
-margin_left = 640.0
-margin_top = 128.0
-margin_right = 704.0
-margin_bottom = 208.0
-text = "Arrow keys = move
-Shift = run
-space = jump
-(note = you can double jump)"
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [connection signal="pressed" from="Panel/start" to="Panel/start" method="_on_start_pressed"]
 [connection signal="pressed" from="Panel/close" to="Panel/start" method="_on_close_pressed"]
