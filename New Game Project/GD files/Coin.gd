@@ -7,7 +7,7 @@ func _process(delta):
 	
 	rotation_degrees += rotationSpeed * delta
 
-#when call, gives player 1 point and makes coin disappear
+
 func _on_Coin_body_entered(body):
 	
 	if body.name == "Player":
